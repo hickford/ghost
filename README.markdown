@@ -24,8 +24,8 @@ Usage
 
 Assuming you have a word list at `/usr/share/dict/words`
 
-    ruby ghost.rb > solution.txt
+    ruby ghost.rb
 
 Otherwise, to use your own word list
 
-    ruby ghost.rb wordlist.txt > solution.txt
+    ruby ghost.rb words.list

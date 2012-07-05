@@ -1,4 +1,4 @@
-#!ruby
+#!/usr/bin/env ruby
 require 'trie'
 @letters = ('a'..'z').to_a.reverse 
 @trie = Trie.new
@@ -20,7 +20,7 @@ end
 # 6 seconds to build trie
 # -1 means not a valid move
 
-warn "trie built" 
+warn "Trie built" 
 
 # nimbers
 

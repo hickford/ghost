@@ -1,0 +1,10 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    fast_trie (0.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  fast_trie (= 0.5.0)

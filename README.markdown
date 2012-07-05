@@ -1,7 +1,7 @@
 Ghost solver
 ============
 
-A Ruby script to solve the word game [Ghost](http://en.wikipedia.org/wiki/Ghost_(game\)).
+A Ruby script to solve the word game [Ghost](http://en.wikipedia.org/wiki/Ghost_(game\)). It prints a short crib sheet describing a winning strategy.
 
 Combinatorial game theory
 -------------------------
@@ -29,3 +29,5 @@ Assuming you have a word list at `/usr/share/dict/words`
 Otherwise, to use your own word list
 
     ruby ghost.rb words.list
+
+You can download a free word list from [FreeBSD](http://www.freebsd.org/cgi/cvsweb.cgi/src/share/dict/web2?rev=1.12;content-type=text%2Fplain) (caution big text file!)

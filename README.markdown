@@ -30,4 +30,4 @@ Otherwise, to use your own word list
 
     ruby ghost.rb words.list
 
-You can download a free word list from [FreeBSD](http://www.freebsd.org/cgi/cvsweb.cgi/src/share/dict/web2?rev=1.12;content-type=text%2Fplain) (caution big text file!)
+You can download a free word list from [FreeBSD](http://www.freebsd.org/cgi/cvsweb.cgi/src/share/dict/web2?rev=1.12;content-type=text%2Fplain) (2.4MB text file)

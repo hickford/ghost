@@ -1,25 +1,37 @@
 #!/usr/bin/env ruby
-require 'trie'
+require 'trie'  # from the gem fast_trie
 @letters = ('a'..'z').to_a.reverse 
 @trie = Trie.new
 
 @max_legal = 2     # are short English words legal?
 # warn "Short English words length at most #{@max_legal} will be admissible"
 
-warn "Building trie from dictionary #{ARGF.filename}"
-if ARGF.filename == "-" and $stdin.tty?
-    warn "(Type in the dictionary-or quit and pipe one in)"
+share_dict_words = "/usr/share/dict/words"
+
+source = ARGF
+
+if ARGF.path == "-" and $stdin.tty?
+    if File.exists? share_dict_words
+        source = IO.readlines(share_dict_words)
+        warn "Building trie from dictionary #{share_dict_words}"
+    else
+        warn "(Type in the dictionary-or quit and pipe one in)"
+    end
+else
+    warn "Building trie from dictionary #{ARGF.path}"
 end
 
-for line in ARGF
+
+for line in source
     word = line.chomp
+    if word != word.downcase
+        next
+    end
     if word.length > @max_legal      # one and two letter English words are legal
-        @trie.add(line.chomp, -1)
+        @trie.add(word, -1) # -1 means not a valid move
     end
 end
 # 6 seconds to build trie
-# -1 means not a valid move
-
 warn "Trie built" 
 
 # nimbers

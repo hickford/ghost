@@ -22,10 +22,10 @@ Installation
 Usage
 -----
 
-    ghost.rb < yawl.txt > solution.txt
+Assuming you have a word list at `/usr/share/dict/words`
 
-Word list
----------
+    ruby ghost.rb > solution.txt
 
-The word list provided `yawl.txt` is the public domain YAWL (Yet Another Word List).
+Otherwise, to use your own words list
 
+    ruby ghost.rb wordlist.txt > solution.txt

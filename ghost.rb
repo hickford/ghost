@@ -80,15 +80,19 @@ winner = x > 0 ? "first" : "second"
 puts "ie. The #{winner} player can always win"
 puts
 #print_nimbers(@game.root)
-puts "Winning strategies for first player:"
-for letter in @letters
-    node = @game.root.walk(letter)
-    if !node.nil? and node.value == 0
-        puts "* #{strategy(node,0).join(", ")}"
+if winner == "first"
+    puts "Winning strategies for the first player:"
+    for letter in @letters
+        node = @game.root.walk(letter)
+        if !node.nil? and node.value == 0
+            puts "* #{strategy(node,0).join(", ")}"
+        end
     end
+    puts
+    puts "Winning strategies for the second player should the first player err:"
+else
+    puts "Winning strategies for the second player:"
 end
-puts
-puts "Winning strategies for second player if first player errs:"
 for letter in @letters
     node = @game.root.walk(letter)
     if !node.nil? and node.value > 0

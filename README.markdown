@@ -19,6 +19,8 @@ Installation
     cd ghost
     bundle install
 
+Bundler will install the gem [fast_trie](http://rubygems.org/gems/fast_trie)
+
 Usage
 -----
 
@@ -31,3 +33,9 @@ Otherwise, to use your own word list
     ruby ghost.rb words.list
 
 You can download a free word list from [FreeBSD](http://www.freebsd.org/cgi/cvsweb.cgi/src/share/dict/web2?rev=1.12;content-type=text%2Fplain) (2.4MB text file)
+
+Performance
+----------
+
+On a 2.5MB word list (250,000 words) the script takes about 1 minute to run on my computer.
+

@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 require 'trie'  # from the gem fast_trie
+require 'set'
 @letters = ('a'..'z').to_a.reverse 
+@letters_set = Set.new(@letters)
 @max_legal = 2     # are short English words legal?
 
 share_dict_words = "/usr/share/dict/words"
@@ -23,7 +25,7 @@ warn "Short words length at most #{@max_legal} will be ignored"
 @dictionary = Trie.new
 for line in source
     word = line.chomp
-    next if word != word.downcase or word.length <= @max_legal
+    next if word != word.downcase or word.length <= @max_legal or /^[a-z]+$/.match(word).nil?
     @dictionary.add(word)
 end
 # 6 seconds to build trie
@@ -53,13 +55,6 @@ def evaluate(node)
     end
 end
 
-def print_nimbers(node)
-    return if node.nil?
-    @letters.map {|x| print_nimbers(node.walk(x)) }
-    nimber = node.value ? "*#{node.value}" : "#"
-    puts "#{node.full_state} #{nimber}"
-end
-
 def strategy(node,parent)
     return if node.nil?
     if node.value == false
@@ -79,7 +74,7 @@ puts "Ghost has value in combinatorial game theory the nimber *#{x}"
 winner = x > 0 ? "first" : "second"
 puts "ie. The #{winner} player can always win"
 puts
-#print_nimbers(@game.root)
+
 if winner == "first"
     puts "Winning strategies for the first player:"
     for letter in @letters
@@ -98,4 +93,18 @@ for letter in @letters
     if !node.nil? and node.value > 0
         puts "* #{strategy(node,0).join(", ")}"
     end
+end
+
+if false
+    warn ""
+    @f = open("ghost-tree-nimbers.txt","w")
+    warn "Saving tree to #{@f.path}"
+    def print_nimbers(node)
+        return if node.nil?
+        @letters.map {|x| print_nimbers(node.walk(x)) }
+        nimber = node.value ? "*#{node.value}" : "#"
+        @f.puts "#{node.full_state} #{nimber}"
+    end
+    print_nimbers(@game.root)
+    @f.close()
 end

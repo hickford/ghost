@@ -84,7 +84,7 @@ if winner == "first"
         end
     end
     puts
-    puts "Winning strategies for the second player should the first player err:"
+    puts "Winning strategies for the second player should the first player err on the first move:"
 else
     puts "Winning strategies for the second player:"
 end

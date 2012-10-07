@@ -10,7 +10,12 @@ Combinatorial game theory describes two player, turn-based, deterministic games 
 
 This script determines the height of the Nim-heap equivalent to Ghost.
 
-1. Winning Ways. Conway, Berlekamp, Guy.
+1. Conway, Berlekamp, Guy (1982). _Winning Ways for your Mathematical Plays_
+
+Inspiration
+---------
+
+Randall Munroe (_xkcd_ artist) [solved Ghost](http://blog.xkcd.com/2007/12/31/ghost/) too.
 
 Installation
 ------------
@@ -19,7 +24,7 @@ Installation
     cd ghost
     bundle install
 
-Bundler will install the gem [fast_trie](http://rubygems.org/gems/fast_trie)
+Bundler will install the gem [fast_trie](http://rubygems.org/gems/fast_trie). Alas, this gem [might not build on Windows](https://github.com/tyler/trie/issues/3).
 
 Usage
 -----
@@ -28,7 +33,7 @@ Assuming you have a word list at `/usr/share/dict/words`
 
     ruby ghost.rb
 
-Otherwise, to use your own word list
+Otherwise, to use your own word list, say `words.list`
 
     ruby ghost.rb words.list
 

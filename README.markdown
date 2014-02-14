@@ -33,11 +33,11 @@ Assuming you have a word list at `/usr/share/dict/words`
 
     ruby ghost.rb
 
-Otherwise, to use your own word list, say `words.list`
+Otherwise, to use your own word list, say `web2.txt`
 
-    ruby ghost.rb words.list
+    ruby ghost.rb web2.txt
 
-You can download a free word list from [FreeBSD](http://www.freebsd.org/cgi/cvsweb.cgi/src/share/dict/web2?rev=1.12;content-type=text%2Fplain) (2.4MB text file)
+You can download the free [Web2 word list](http://svnweb.freebsd.org/base/head/share/dict/web2?view=co) courtesy of FreeBSD. (2.4MB text file) 
 
 Performance
 ----------

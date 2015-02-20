@@ -20,7 +20,7 @@ Randall Munroe (_xkcd_ artist) [solved Ghost](http://blog.xkcd.com/2007/12/31/gh
 Installation
 ------------
 
-    git clone https://github.com/matt-hickford/ghost.git
+    git clone https://github.com/hickford/ghost.git
     cd ghost
     bundle install
 

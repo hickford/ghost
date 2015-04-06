@@ -1,7 +1,7 @@
 Ghost solver
 ============
 
-A Ruby script to solve the word game [Ghost](http://en.wikipedia.org/wiki/Ghost_(game\)). It prints a short crib sheet describing a winning strategy.
+A Ruby script to solve the word game [Ghost](http://en.wikipedia.org/wiki/Ghost_(game)). It prints a short crib sheet describing a winning strategy.
 
 Combinatorial game theory
 -------------------------
